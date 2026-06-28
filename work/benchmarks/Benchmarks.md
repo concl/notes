@@ -1,5 +1,5 @@
 - SWE bench is the main benchmark for agents
-	- Other benchmarks: deepswe, 
+	- Other benchmarks: deepswe, aider
 
 
 
