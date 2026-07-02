@@ -84,7 +84,6 @@ Another thing they can do is the `group()` method where `match.group()` returns 
 
 ## Modifying Strings
 
-
 | Method                        | Purpose                                                                                                                            |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | `pattern.split(s)`            | Splits the string wherever the pattern matches (greedily) and returns a list of the non matching parts. (The matches are consumed) |
