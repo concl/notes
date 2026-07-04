@@ -13,16 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/benchmarks/Agents.md",
+                "file": "work/swe/Docker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Agents"
+              "title": "Docker"
             }
           },
           {
             "id": "7018ba63757a3576",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "work/swe/HTTP.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "HTTP"
+            }
+          },
+          {
+            "id": "dd3e9a423ed76082",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -31,7 +45,8 @@
               "title": "Graph view"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -104,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/benchmarks/vLLM.md",
+                "file": "work/swe/HTTP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +129,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for vLLM"
+              "title": "Backlinks for HTTP"
             }
           },
           {
@@ -193,17 +208,26 @@
       "bases:Create new base": false
     }
   },
-  "active": "08a9a0d5737cd99c",
+  "active": "7018ba63757a3576",
   "lastOpenFiles": [
+    "work/swe/Docker.md",
+    "work/swe/Git.md",
+    "work/swe/HTML.md",
+    "work/swe/CSS.md",
+    "work/benchmarks/Agents.md",
     "work/benchmarks/AI APIs.md",
     "work/benchmarks/Benchmarks.md",
     "work/benchmarks/SWE-Bench.md",
     "work/benchmarks/vLLM.md",
-    "work/swe/Git.md",
+    "work/swe/JavaScript.md",
+    "work/swe/React.md",
     "work/swe/Regex.md",
+    "work/swe/HTTP.md",
+    "Pasted image 20260704222054.png",
     "work/swe/Web Scraping.md",
-    "work/swe/Docker.md",
-    "work/benchmarks/Agents.md",
+    "Untitled.base",
+    "work/swe/TypeScript.md",
+    "Untitled.md",
     "README.md",
     "work/swe",
     "work/benchmarks",
