@@ -25,3 +25,8 @@ You have local code that you want to push to github (you haven't made a repo yet
 4. `git remote add origin <url>`
 5. `git pull --allow-unrelated-histories` -- if you already have committed on the remote repo
 6. git push origin main
+
+## Useful commands
+
+- `git rm --cached file` removes a file from being tracked from the git (if you accidentally pushed it before changing gitignore)
+- `git rm --cached -r dir/` recursively removes the entire directory
