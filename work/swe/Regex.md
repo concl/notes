@@ -25,6 +25,7 @@ The most important quantifier is `\`, which can allow every other quantifier inc
 The second most important qualifiers are `[ ]`, which specify a set of characters that can be matched. For instance the regex: `[abc]` matches either a, b, or c. Using `^` can complement the set i.e. `[^abc]` matches anything but a, b, or c.
 
 ---
+## Repetitions
 
 `*` matches any number of the preceding object (which can be a character or set). `+` matches one or more of the preceding object. `?` matches 0 or 1 of the preceding object (can be thought of as the thing being optional). `{m, n}` matches at least `m` times and at most `n` times.
 
@@ -35,13 +36,27 @@ Examples:
 Behavior:
 For expressions like this, the engine matches greedily, meaning that it tries to match as many of the previous object as possible or permitted, and backtracking if a match isnt found after.
 
+In order to make this lazy (not greedy), add a ? at the end of the quantifier
+Example:
+`a+?` matches 1 or more `a` characters but tries to match as little as possible.
+
 ---
+## Groups
 
 `()` groups up subexpressions to be used with the other quantifiers. It can be used with matches to get the substrings and such that are matched (to access individual groups in a regex).
 
 Example:
 `(ab)+` matches repetitions of "ab", so `abababab` but not `abababa`
 `([a-c]d)+` matches repetitions of characters from a-c and then a d following, i.e. `adbdcd`
+
+
+The `(?...)` syntax denotes special properties for the group.
+
+For example:
+- `(?P=<name>...)` denotes a group with the name `name`, which can be used to extract parts of matches.
+
+- `(?=...)`  is a lookahead assertion (useful for splitting strings without consuming), and it causes a match if and only if there is a match for `...` after the current match.
+	- Example: `Isaac (?=Asimov)` matches `Isaac ` iff it is followed by `Asimov` 
 
 ---
 
