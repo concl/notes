@@ -20,7 +20,7 @@ def main():
     
     while True:
         
-        process = subprocess.run(["git",command],capture_output=True)
+        process = subprocess.run(["git",command],capture_output=True, cwd=path)
         stdout, stderr = process.stdout, process.stderr
         if not patt.match(stderr.decode()):
             break
