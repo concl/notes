@@ -26,7 +26,11 @@ You have local code that you want to push to github (you haven't made a repo yet
 5. `git pull --allow-unrelated-histories` -- if you already have committed on the remote repo
 6. git push origin main
 
+Scenario 3
+You committed an api key on local and you need to amend the commit before pushing your branch to remote.
+
 ## Useful commands
 
 - `git rm --cached file` removes a file from being tracked from the git (if you accidentally pushed it before changing gitignore)
 - `git rm --cached -r dir/` recursively removes the entire directory
+- `git branch -D branch1 branch2 ...` deletes unused branches
