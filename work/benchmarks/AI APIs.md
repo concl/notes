@@ -128,4 +128,9 @@ message_response = chunk.choices[0].delta.content
 reasoning = chunk.choices[0].delta.reasoning_content
 ```
 
+### Tool Calls
+
+Source: https://developers.openai.com/api/docs/guides/tools
+
+
 ## Anthropic
