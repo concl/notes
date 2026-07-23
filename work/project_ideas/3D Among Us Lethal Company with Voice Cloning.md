@@ -1,0 +1,1 @@
+Idea: Use Qwen3-tts to clone players' voices and deepseek to pretend they are players. Multiplayer friendslop.
