@@ -1,0 +1,3 @@
+Dynamic programming is a technique for solving problems where we define some notion of state, where each state represents a subproblem (the full problem instance will be encoded in one such state).
+
+Each state is typically dependent on some number of other states, and this dependency graph is a DAG. Thus, we can solve the full problem by traversing this graph topologically, starting from the nodes that have no dependencies on other states (base cases which can be solved directly).
