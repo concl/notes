@@ -57,7 +57,7 @@ For example:
 
 - `(?=...)`  is a lookahead assertion (useful for splitting strings without consuming), and it causes a match if and only if there is a match for `...` after the current match.
 	- Example: `Isaac (?=Asimov)` matches `Isaac ` iff it is followed by `Asimov` 
-
+- `(?:...)` is a non capturing group.
 ---
 
 `.` matches any character except newlines. However, if `re.DOTALL` is passed, then it also matches newline characters.
