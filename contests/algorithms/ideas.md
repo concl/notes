@@ -17,9 +17,7 @@ When a problem has a certain type of object of interest (i.e. an array, graph, s
 
 ### considering small cases
 
-
-### 
-
+Small cases of a problem can reveal a large amount of structure of the general problem. In some cases, a problem can be decomposed entirely into finitely many small cases.
 
 ### considering a general case
 
@@ -36,7 +34,22 @@ Sometimes, when performing operations on an object, a certain property cannot ch
 
 ## symmetry
 
+Symmetry can be often used to optimize resource complexity.
 
 ## working backwards
 
+In problems that require finding a "path" to a solution, it can be much easier to start from the solution and reconstruct the "path" backwards.
+
+# Specific problem topics
+
+## XOR
+
+Many problems involve taking bitwise xor's of integers that are a part of some object. XOR is a commutative and associative operation where every integer is its own inverse; algebraic reasoning a common first approach to problems involving xor.
+
+This is a very common problem topic which usually involves making a number of observations; often problems require simplifying what exactly xor means in context. 
+
+Commonly utilized ideas/tricks/properties of xor:
+- For a cumulative xor of a (multi)set of elements, elements that appear an even amount of times will be canceled out. (This property can be used to isolate a single element that satisfies some property).
+- Simulate/write down the set of xor operations algebraically to see if there are any cancellations/invariants
+- Sometimes considering simple boolean variables only (instead of full bit strings) can reveal a lot about the structure of the problem
 
