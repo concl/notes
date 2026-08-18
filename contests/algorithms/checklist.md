@@ -11,3 +11,4 @@ Most Important  (step by step):
 
 
 Others:
+- Edge cases are hard to look out for, they can sometimes be prevented by early branches returning the correct answer.
