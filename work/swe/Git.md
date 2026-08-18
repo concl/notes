@@ -26,8 +26,15 @@ You have local code that you want to push to github (you haven't made a repo yet
 5. `git pull --allow-unrelated-histories` -- if you already have committed on the remote repo
 6. git push origin main
 
-Scenario 3
+Scenario 3: `--amend`
 You committed an api key on local and you need to amend the commit before pushing your branch to remote.
+
+If the commit was the last commit, simply remove the information (or you can even add information) and run:
+```
+git add .
+git commit --amend
+```
+
 
 ## Useful commands
 

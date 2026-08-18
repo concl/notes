@@ -5,9 +5,9 @@
 
 Automates commands ran from the terminal
 
-Main Syntax:
+### Basic usage
 
-```
+```python
 proc = subprocess.run(args, stdin=None, stdout=None, stderr=None, capture_output=False, cwd=None, env=None) # args are a list of strings that denote the cli command and inputs. kwargs are defaults
 ```
 
@@ -17,3 +17,18 @@ proc = subprocess.run(args, stdin=None, stdout=None, stderr=None, capture_output
 This function is a high level convenience function that blocks the current thread until the subprocess terminates, and returns a `CompletedProcess` instance.
 
 If capture_output is True, then the `CompletedProcess` has the attributes `stdout` and `stderr` which are strings that contain the captured data.
+
+### Non blocking subprocesses (servers, etc)
+
+```python
+proc = subprocess.Popen(args)
+```
+
+This creates a `Popen` object which handles the subprocess. It can be closed with:
+```python
+proc.terminate()
+```
+or for when the process is unresponsive:
+```python
+proc.kill()
+```
