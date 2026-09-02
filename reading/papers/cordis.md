@@ -15,3 +15,8 @@ https://github.com/cordiverse/cordis
 ## Agent Harnesses
 
 Agent harnesses are often self-evolving. Since they accumulate changes rapidly and often without any human oversight, systems that don't implement dynamic composability well can experience problems, including expenses from the need to restart extension systems when components are added and removed.
+
+## Cordis Library
+
+- A plugin is defined as an object that implements the `Service` trait (can be a function with "inject" and "apply(ctx)" or subclass of `Service`).
+- 
