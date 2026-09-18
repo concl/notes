@@ -19,7 +19,11 @@ One of my most common mistakes is forgetting to take in input. This often leads 
 - To prevent input errors, always take in all input in the beginning, try not to take in input while doing processing steps unless it's trivial.
 ## Edge Cases
 
-The most common edge case is when the input is "empty". It's common for this edge case to be hidden in the problem statement.
+An edge case is a case that lives on the "boundary" of the problem space (size bounds, kinds of outputs that are possible, degenerate structures). It often tests for an incorrect hidden assumption that an algorithm makes, which would otherwise work for most of the problem space.
+
+The set of "edge cases" can be large or small, but are almost always very sparse. It can often be dealt with by using casework by detecting whether an input is an "edge case". However, it can also be possible for a more "clean" algorithm to naturally handle edge cases without explicitly handling them.
+
+The most common edge case is when the input is "empty". It's common for this edge case to be hidden in the problem statement. Although it's not completely applicable to try an input of "all zeros" or an "empty input" for all problems, we can consider this idea in response to a WA or RE verdict.
 
 Other Examples:
 In an ICPC unit conversion problem, we can build a data structure that allows for conversions between different units in the same group, and if they aren't in the same group, we return this information.
