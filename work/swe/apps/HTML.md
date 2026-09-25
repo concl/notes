@@ -1,4 +1,4 @@
-Related: [[HTTP]], [[JavaScript]], [[CSS]]
+Related: [[HTTP]], [[javascript]], [[CSS]]
 
 HTML is the basic markup language used to *structure* web pages on the internet. It consists of tags that form a hierarchical structure where larger elements group together child elements. For instance, a page often has a few main components: the navigation bar, the main body of content, and "the header". Each of these components may have subcomponents which can be represented in HTML.
 
