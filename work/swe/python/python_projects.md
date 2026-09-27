@@ -5,7 +5,7 @@ uv can be used to manage dependencies for python projects.
 
 uv uses a pyproject.toml file to define dependencies for the project (along with other information). By default, dependencies will be installed from PyPI, but custom indexes (i.e. for PyTorch cuda binaries) can be defined and configured like the following:
 
-```
+```toml
 [[tool.uv.index]]
 name="pytorch-cu128"
 url="https://download.pytorch.org/whl/cu128"
@@ -14,6 +14,12 @@ url="https://download.pytorch.org/whl/cu128"
 torch = { index = "pytorch-cu128" }
 torchvision = { index = "pytorch-cu128" }
 torchaudio = { index = "pytorch-cu128" }
+```
+
+To define cli commands that can be run when the venv is active, we can do the following (this requires the project to be an importable module, using a build system):
+
+```toml
+
 ```
 
 ## Importing
