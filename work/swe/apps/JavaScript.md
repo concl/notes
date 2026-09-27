@@ -4,15 +4,15 @@ Main introductory resource: https://developer.mozilla.org/en-US/docs/Web/JavaScr
 Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 
 Frameworks
-[[React]]
+[[react]]
 
-Since JavaScript isn't statically typed, big projects can benefit from using [[TypeScript]] instead.
+Since JavaScript isn't statically typed, big projects can benefit from using [[typescript]] instead.
 
 ## Importing (node.js)
 
 CommonJS: `require('foo')`.
 
-This is a synchronous function that is the default way to import modules in `node.js`
+This is a synchronous function that is the default way to import modules in [[node]]
 
 Example:
 `const { app, BrowserWindow } = require('electron')`

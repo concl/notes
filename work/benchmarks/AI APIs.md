@@ -3,14 +3,14 @@
 Steps for running models in Python:
 1. Import openai, create .env file and read from them to use api keys
 2. Create a client (example with deepseek as the model provider):
-```
+```python
 client = OpenAI(
 	api_key=os.getenv("DEEPSEEK_API_KEY"),
 	base_url="https://api.deepseek.com",
 )
 ```
 3. Generate response:
-```
+```python
 response = client.chat.completions.create(
 	model=model_name,
 	messages=[
@@ -29,7 +29,7 @@ response = client.chat.completions.create(
 ### Nonstreaming Response:
 
 Example (... means the field is not that useful to know, or an omission of fields):
-```
+```python
     ChatCompletion(
         id="10085e44-56e3-4b89-b1fa-2ccaf3b0895a",
         choices=[
@@ -77,7 +77,7 @@ Example (... means the field is not that useful to know, or an omission of field
 ```
 
 To get the content of the message:
-```
+```python
 message_response = response.choices[0].message.content
 reasoning = response.choices[0].message.reasoning_content
 ```
@@ -89,7 +89,7 @@ Example:
 
 Reasoning Token:
 
-```
+```python
 ChatCompletionChunk(
 	id="69b5df96-481a-402a-93ff-d4ef9d842e5c",
 	choices=[
@@ -123,7 +123,7 @@ ChatCompletionChunk(
 ```
 
 To get the content of the message:
-```
+```python
 message_response = chunk.choices[0].delta.content
 reasoning = chunk.choices[0].delta.reasoning_content
 ```
