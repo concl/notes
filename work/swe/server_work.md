@@ -8,7 +8,7 @@ Detach: `Ctrl+A d`
 Show running sessions: `screen -ls`
 Reattach: `screen -r`, `screen -r name/id` (either name or id works)
 Force reattach: `screen -dr name/id`
-
+Logging (In the same directory as the screen is called): `screen -L`
 
 ## Finding things
 
