@@ -27,3 +27,20 @@ Prints the lines in `bar.txt` that match the regex pattern `foo`
 
 Commonly used with pipes:
 `ps aux | grep python`
+
+
+## SSH
+
+Command used for connecting securely to remote shells.
+
+### Port forwarding
+Setting up port forwarding (example command):
+
+```bash
+ssh -N -L 8001:localhost:8000 serrano
+```
+
+Here `-N` means that no shell is opened on the remote
+Then `-L 8001:localhost:8000`  means port 8001 is forwarded to localhost:8000 on the remote side
+
+`serrano` is the remote host (DNS name or alias from `~/.ssh/config`)
