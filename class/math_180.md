@@ -33,3 +33,10 @@ $v$ ~ $w$ if there is a walk between the 2 vertices. This is an equivalence rela
 **Distances** 
 The distance between 2 vertices is the minimum of the lengths of all paths between the 2 vertices.
 
+**Score sequence**
+The score sequence of a graph is one of (oftentimes) many sequences of a graph, where an order of vertices is chosen, and the degrees of those nodes are listed out.
+
+## Theorems
+
+**Handshake Lemma**
+The number of odd degree nodes in a graph is even.
