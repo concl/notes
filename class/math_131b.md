@@ -39,3 +39,9 @@ The ball can be abbreviated as $B(x_0, r)$ given context on which metric space w
 **Boundary**
 
 **Adherrent**
+
+
+**Limit Point**
+
+For a sequence $(x_n)_{n=m}^\infty$ of points in a metric space $(X, d)$, and $L \in X$, we say $L$ is a limit point of $(x_n)_{n=m}^\infty$ iff for every $N > m$ and $\varepsilon > 0$ there exists $n > N$ where $d(L, x_n) \le \varepsilon$.
+
