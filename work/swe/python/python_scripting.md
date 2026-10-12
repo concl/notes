@@ -32,3 +32,14 @@ or for when the process is unresponsive:
 ```python
 proc.kill()
 ```
+
+The constructor has options for piping in stdin from a file or piping stdout into a file (in real time) like so:
+
+```python
+proc = subprocess.Popen(
+	cmd,
+	stdin=input_file,
+	stdout=output_file,
+	text=True
+)
+```
