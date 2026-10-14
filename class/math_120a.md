@@ -29,3 +29,8 @@ $$
 
 
 ($\kappa$ = curvature of the curve, $\tau$ is torsion)
+
+
+**Osculating Plane**
+
+The osculating plane
