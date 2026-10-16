@@ -49,8 +49,23 @@ Then `-L 8001:localhost:8000`  means port 8001 is forwarded to localhost:8000 on
 ## Adding a User to the server
 
 ```bash
-sudo useradd -m -s /bin/bash alice
-sudo install -d -m 700 -o alice -g alice /home/alice/.ssh
-sudo install -m 600 -o alice -g alice /path/to/theirkey.pub /home/alice/.ssh/authorized_keys
+# 1. Create the group first (required — the user's primary group must exist)
+sudo ldapaddgroup <username>
+  
+
+# 2. Create the user, answering 5 prompts
+sudo ldapadduser <username> <username>
+
+  
+
+# 3. Install their SSH public key
+sudo sh -c 'U=<username>; K="ssh-ed25519 AAAA... user@host"; mkdir -p /home/$U/.ssh; printf "%s\n" "$K" >> /home/$U/.ssh/authorized_keys; chown -R "$U":"$U" /home/$U/.ssh; chmod 700 /home/$U/.ssh; chmod 600 /home/$U/.ssh/authorized_keys'
 ```
 
+## Deleting a user
+
+```bash
+sudo ldapdeleteuser <username>
+sudo ldapdeletegroup <username>
+sudo rm -rf /home/<username>     # ldapdeleteuser does NOT remove the home dir
+```
