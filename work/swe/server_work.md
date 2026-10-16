@@ -44,3 +44,13 @@ Here `-N` means that no shell is opened on the remote
 Then `-L 8001:localhost:8000`  means port 8001 is forwarded to localhost:8000 on the remote side
 
 `serrano` is the remote host (DNS name or alias from `~/.ssh/config`)
+
+
+## Adding a User to the server
+
+```bash
+useradd -m -s /bin/bash alice
+install -d -m 700 -o alice -g alice /home/alice/.ssh
+install -m 600 -o alice -g alice /path/to/theirkey.pub /home/alice/.ssh/authorized_keys
+```
+
