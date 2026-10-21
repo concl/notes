@@ -63,13 +63,20 @@ vllm bench --dataset-name random
 | ShareGPT | Samples from `ShareGPT_V3_unfiltered_cleaned_split.json`                                                                                                                                                | Used for testing spec decode setups                                        |
 
 
-
 ## Serving models
 
 ```bash
 vllm serve --model HuggingFace/model
 ```
 
+vLLM supports serving a model with a yaml config (to remove the need for command args) like the following:
+
+```bash
+vllm serve --config config.yaml
+```
+
+
+## vLLM Execution Flow
 
 
 ## Pull Requests
