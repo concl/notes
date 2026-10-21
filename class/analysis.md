@@ -107,7 +107,6 @@ A set $E$ is only relatively open with respect to $Y$ iff there exists an open s
 A set is only relatively closed with respect to $Y$ iff there exists a closed subset $K$ of $X$ such that $E = K \cap Y$.
 
 
-
 **Limit Point**
 
 For a sequence $(x_n)_{n=m}^\infty$ of points in a metric space $(X, d)$, and $L \in X$, we say $L$ is a limit point of $(x_n)_{n=m}^\infty$ iff for every $N > m$ and $\varepsilon > 0$ there exists $n > N$ where $d(L, x_n) \le \varepsilon$.
@@ -125,9 +124,43 @@ However, if there exists some subsequence of a Cauchy sequence that converges, t
 
 Proof: Suppose $(x_n)_{n=m}^\infty$ is Cauchy, and $(x_{n_j})_{j=1}^\infty$ converges to $L$. Then for any $\varepsilon > 0$ there exists $J \ge 1$ such that $j \ge J$ implies that $d(x_{n_j}, L) < \varepsilon$. For this same $\varepsilon$ there also exists $N \ge m$ such that for any $a, b \ge N$ we have $d(x_a, x_b) < \varepsilon$.
 
-Define $P = \max (N, n_J)$, then consider $d(x_n, L$) for some $n \ge P$. We have $d(x_{n_P}, L) < \varepsilon$ and $d(x_n, x_{n_P}) < \varepsilon$, and by the triangle inequality we have $d(x_n, L) \le d(x_{n_P}, L)  + d(x_n, x_{n_P}) < 2 \varepsilon$.
+Define $P = \max (N, n_J)$, then consider $d(x_n, L$) for some $n \ge P$. Consider some $k$ such that $n_k \ge P$ (this implies that $k \ge J$, since subsequence indices are increasing, and thus $n_k \ge n_J \implies k \ge J$). We have $d(x_{n_k}, L) < \varepsilon$ and $d(x_n, x_{n_k}) < \varepsilon$, and by the triangle inequality we have $d(x_n, L) \le d(x_{n_k}, L)  + d(x_n, x_{n_k}) < 2 \varepsilon$.
 
-If we take $\epsilon = 2\varepsilon$, this means we can construct for any $\epsilon > 0$ some $P \ge m$ such that $n \ge P$ implies that $d(x_n, L) < 2 \varepsilon = \epsilon$, which means $(x_n)_{n = m}^\infty$ must converge to $L$.
+Consider an arbitrary $\delta > 0$ and let $\varepsilon = \frac \delta 2$. Apply the previous argument, then we have $P$ such that $n \ge P$ implies that $d(x_n, L) < 2 \varepsilon = \delta$. Thus $(x_n)_{n = m}^\infty$ must converge to $L$.
+
+**Complete Metric Spaces**
+
+A metric space $(X, d)$ is called complete if every Cauchy sequence is convergent to a limit in $X$.
+
+For instance, the metric space $(\mathbb R, d)$ is complete.
+
+Complete metric spaces are "intrinsically closed" meaning that if they are a subspace, they are closed. For instance, if $Y \subset X$, and $(Y, d|_{Y \times Y})$ is complete, then $Y$ is closed in $(X, d)$. Conversely, if $(X, d)$ is complete, and $Y$ is a closed subset of $X$, then $(Y, d|_{Y \times Y})$ is complete.
+
+
+**Compactness**
+
+A metric space $(X, d)$ is called compact iff every sequence in $X$ has at least 1 subsequence that converges. A subset $Y$ of $X$ is called compact iff the subspace $(Y, d|_{Y \times Y})$ is compact.
+
+
+**Bounded Set**
+
+A subset $Y$ of the metric space $X$ is called bounded if there exists a ball $B(x_0, r)$ in $X$ that contains (supersets) $Y$. 
+
+
+**Continuous Functions**
+
+A function $f : X \to Y$, where $(X, d_X)$ and $(Y, d_Y)$ are metric spaces is continuous at a point $x_0 \in X$ iff for any $\varepsilon > 0$ there exists $\delta > 0$ such that for any $x \in X$ where $d_X(x, x_0) < \delta$ implies that $d_Y(f(x), f(x_0)) < \varepsilon$. 
+
+This is equivalent to saying that for any sequence $(x_n)_{n = m}^\infty$ in $X$ that converges to $x_0$ with respect to the metric $d_X$, we have that $f(x_n)$ converges to $f(x_0) \in Y$ with respect to the metric $d_Y$.
+
+
+**Uniform Continuity**
+
+A function $f: X \to Y$ is called uniformly continuous if for any $\varepsilon > 0$ there exists $\delta > 0$ such that if there are two points $x, x' \in X$ such that $d(x, x') < \delta$ then $d(f(x), f(x')) < \varepsilon$. 
+
+In other words, for any given $\varepsilon >0$ there is a distance which forces points that are closer than that distance to cause deviations in the function value that are less than $\varepsilon$. This differs from ordinary continuity in that the same $\delta$ has to work for every point in $X$ (for ordinary continuity, the choice of $\delta$ can depend on both $x$ and $\varepsilon$ instead of only $\varepsilon$).
+
+A function that is continuous on a compact set $X$ is uniformly continuous (and the converse is trivially true).
 
 ## Theorems and Properties
 
@@ -142,6 +175,28 @@ If we take $\epsilon = 2\varepsilon$, this means we can construct for any $\epsi
 7. The **union** of a finite, countably infinite, or uncountably infinite collection of open sets is open. The **intersection** of a finite, countably infinite, or uncountably infinite collection of closed sets is closed.
 8. The interior of a set $E$ is the largest open set that is contained in $E$, i.e. if an open set $V \subseteq E$ then $V \subseteq \text{int}(E)$. The closure of a set $E$ is the smallest closed set that contains $E$, i.e. if any other closed set $K \supset E$ then $K \supset \overline E$. 
 
+**Heine-Borel Theorem (Closed and Bounded Subsets with $l^n$ norms are compact)**
+
+If $(R^n, d)$ is a Euclidean space with either the Euclidean, taxicab, or sup norm metric, then a subset $E$ of $R^n$ is compact iff it is closed and bounded.
+
+HB is not true for general metric spaces, for instance $(\mathbb Z, d_{\text{disc}})$ is closed and bounded (since the ball $B(0, 2)$ encompasses the entire space, and $\mathbb Z$ contains all of its boundary points where $\partial \mathbb Z = \emptyset$). However we can take the sequence $1, 2, 3, \dots$ which has no convergent subsequence.
+
+**(Infinite) Open Covers of Compact Sets Must Have Finite Subcovers**
+
+Let $(X, d)$ be a metric space, and let $Y$ be a compact subset of $X$. Let $(V_\alpha)_{\alpha \in I}$ be a collection of open sets in $X$, and suppose that:
+$$Y \subseteq \bigcup_{\alpha \in I} V_\alpha$$
+($Y$ is covered by the union of the collection of open sets $(V_\alpha)_{\alpha \in I}$, an open cover).
+
+Then there is a finite subset $F \subseteq I$ such that:
+$$Y \subseteq \bigcup_{\alpha \in F} V_\alpha$$
+($Y$ is covered by a finite subset of the collection of open sets).
+
+This notion has a converse, where if every open cover of a set $Y$ has a finite subcover, then $Y$ is compact.
+
+For metric spaces, this definition is equivalent to the sequence definition of compact sets, but in general topological spaces this definition is slightly different and more "fundamental".
 
 
+**Maximum Principle**
+
+A continuous function $f : X \to \mathbb R$, where $(X, d)$ is a compact metric space, is bounded (the image is a bounded subset of $\mathbb R$). Furthermore, $f$ attains it maximum value at some point $x_\max \in X$ and its minimum value at some point $x_\min \in X$.
 

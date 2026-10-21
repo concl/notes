@@ -2,7 +2,7 @@ The transformers library is the most standard way to access open weight models f
 
 ## Embedding Models
 
-Mostly uses `sentence-transformers`.
+Can use `sentence-transformers`.
 
 Loading a model (notice that it doesn't use the usual `.from_pretrained()` method):
 ```
