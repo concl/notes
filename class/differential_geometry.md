@@ -26,9 +26,27 @@ $$
 $$
 \frac{dB}{ds} = -\tau N
 $$
-
-
 ($\kappa$ = curvature of the curve, $\tau$ is torsion)
+
+We can alternatively write this as:
+$$
+\begin{bmatrix}
+\frac{dT}{ds} \\
+\frac{dN}{ds} \\
+\frac{dB}{ds} \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+0 & \kappa & 0 \\
+-\kappa & 0 & \tau \\
+0 & -\tau & 0
+\end{bmatrix}
+\begin{bmatrix}
+T \\
+N \\
+B \\
+\end{bmatrix}
+$$
 
 
 **Osculating Plane**
@@ -38,6 +56,21 @@ The osculating plane is the plane where a curve is "locally embedded" in 3D spac
 **Regular**
 
 A curve $r(t$) that is **regular** is a curve that has $r'(t) \ne \mathbf 0$ for all $t$ in its domain. This property can depend on the specific parametrization of the curve, and isn't necessarily an inherent property of the curve.
+
+**Differentials (i.e. $d F_p (v)$)
+
+The standard way to write the "derivative" of a map $f: R^{n} \to R^m$ is $D f(x)$ (which is an $m \times n$ matrix, since it maps n dimensional column vectors to m dimensional column vectors). In differential geometry, this can be written as $d F_x$. Since this is a matrix representing the local linear transformation close to $x$ of that point, we apply it to a vector like $d F_x(v)$.
+
+**Chain Rule**
+
+$$D (G \circ F) (x) = D G(F(x)) D F(x)$$
+
+Equivalently with differentials:
+
+$$
+d(G \circ F)_x = DG(F(x))DF(x)
+$$
+
 
 **Homeomorphism (Topological equivalence)**
 

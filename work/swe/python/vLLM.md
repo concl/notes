@@ -22,7 +22,7 @@ End-to-end benchmarking metrics that measure performance of a setup. Usually giv
   Measures the average (single-stream) time between tokens during the decode phase (not including the first token). 
   
 - **tok/s (Token throughput in tokens per second)**
-  Measures the average (concurrent) tokens generated per second during the decode phase.
+  Measures the average (concurrent) tokens generated per second during the decode phase. Calculated as the total number of tokens generated across every stream divided by the time taken for the entire request (including prefill, scheduling, and tail time).
 
 
 ## Benchmarking
