@@ -69,3 +69,25 @@ sudo ldapdeleteuser <username>
 sudo ldapdeletegroup <username>
 sudo rm -rf /home/<username>     # ldapdeleteuser does NOT remove the home dir
 ```
+
+## Zipping
+
+**Extracting a .gz file on linux (single compressed file)**
+
+```bash
+gzip -dk file.gz
+```
+
+The `-k` option in `-dk` ensures that the original file is kept.
+
+The output can be piped to stdout with the `-c` option:
+
+```bash
+gzip -dc file.gz > output_file
+```
+
+**Extracting a .tar.gz file on linux (compressed directory)**
+
+```bash
+mkdir archive-contents && tar -xf archive.tar.gz -C archive-contents
+```
