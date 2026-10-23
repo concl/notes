@@ -76,7 +76,27 @@ vllm serve --config config.yaml
 ```
 
 
-## vLLM Execution Flow
+## vLLM Architecture
+
+### Entrypoints
+
+Source: https://docs.vllm.ai/en/latest/design/arch_overview/
+
+vLLM has different entrypoints (frontends) for the user to interact with the main system/engine. From the vllm python library, the main interface is the [LLM](https://github.com/vllm-project/vllm/blob/main/vllm/entrypoints/llm.py) class, whose "backend" is the `EngineCore` class.
+
+Additionally,  vLLM also includes an OpenAI API compatible server (launched with a [cli](https://github.com/vllm-project/vllm/blob/main/vllm/entrypoints/cli/main.py)), which relies on the `AsyncLLM` class.
+
+vLLM has a multiprocess architecture, whose design is to maximize throughput and separate concerns. The main processes are:
+
+1. API Server Process
+   Handles HTTP requests, input tokenization, output streaming. Communicates with engine core processes via ZMQ sockets. By default there is only 1 API server (for most usecases probably only need 1).
+2. Engine Core Process
+   Handles scheduling, manages KV Cache, coordinates model execution across multiple GPUs. There are as many Engine Core processes as data parallel rank (usually just 1).
+3. GPU Worker Processes
+   There is 1 worker per GPU. In total, there are `tensor_parallel_size x pipeline_parallel_size` GPU workers. (horizontal * vertical shards)
+4. DP Coordinator Process
+   Unimportant, manages data parallel when >1
+
 
 
 ## Pull Requests
