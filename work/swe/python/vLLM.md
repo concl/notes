@@ -32,17 +32,18 @@ Results from running `vllm bench serve`. Standardized metrics to report for perf
 To run a benchmark on a given model (Qwen 3.8 27B) quickly, run:
 
 ```bash
-vllm bench serve --model Qwen/Qwen3.8-27B-FP8
+vllm bench serve --model Qwen3.8-27B-FP8
 ```
 
 By default, `vllm bench serve` assumes that the API is located at `localhost` with port `8000`. This can be modified as follows (defaults shown):
 
 ```bash
 vllm bench serve \
-	--model Qwen/Qwen3.8-27B-FP8 \
+	--model Qwen3.8-27B-FP8 \
 	--host 127.0.0.1 \
 	--port 8000 \
 	--endpoint /v1/completions
+	--tokenizer Qwen/Qwen3.8-27B-FP8
 ```
 
 To automate table generation, benchmark outputs can be saved to a json file with:
@@ -61,7 +62,7 @@ vllm bench --dataset-name random
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | Random   | Generates random token ids from the model's vocabulary with a specified length, and inputs them, and runs decode for a specified length.<br><br>Options: `--random-input-len` and `--random-output-len` | Used for general end to end on kernel, quantization, and long-context work |
 | ShareGPT | Samples from `ShareGPT_V3_unfiltered_cleaned_split.json`                                                                                                                                                | Used for testing spec decode setups                                        |
-
+If the vllm server has a profiler enabled, we can also profile with `--profile`.
 
 ## Serving models
 
