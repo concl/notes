@@ -64,6 +64,12 @@ vllm bench --dataset-name random
 | ShareGPT | Samples from `ShareGPT_V3_unfiltered_cleaned_split.json`                                                                                                                                                | Used for testing spec decode setups                                        |
 If the vllm server has a profiler enabled, we can also profile with `--profile`.
 
+## Profiling
+
+https://docs.vllm.ai/en/latest/contributing/profiling/
+
+Visualizing traces: https://ui.perfetto.dev/
+
 ## Serving models
 
 ```bash
