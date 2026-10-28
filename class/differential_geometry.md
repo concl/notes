@@ -1,6 +1,45 @@
 
 ## Definitions
 
+**Curve**
+
+A curve is a function $\alpha : I \to  \mathbb R^3$ that takes a real number from an interval and maps it to a point. Most of the time we deal with differentiable curves. Thus we can define a curve as:
+$$
+\alpha(t) = (x(t), y(t), z(t))
+$$
+where $x, y, z$ are differentiable.
+
+**Trace**
+
+The trace of a curve is its image. Thus for $\alpha : I \to  \mathbb R^3$, the trace is $\alpha(I) = \{ p \in \mathbb R^3 : p = \alpha(t) \}$.
+
+**Regular**
+
+A curve $\alpha(t$) that is **regular** is a curve that has $\alpha'(t) \ne \mathbf 0$ for all $t$ in its domain. On a regular point $\alpha(t_0)$ (a point that is not singular), the tangent line is defined to be:
+$$
+\{ \alpha(t_0) + \lambda \alpha'(t_0) : \lambda \in \mathbb R\}
+$$
+
+
+**Singular**
+
+A point on a curve $\alpha(t)$ is singular if $\alpha'(t) = 0$.
+
+
+
+**Reparametrization**
+
+if $h: J \to I$ is a diffeomorphism (bijective and has both it and its inverse differentiable, equivalently that $h'(t) \ne 0$, and $h(J) = I$).
+
+Then we have $\beta (t) = \alpha \circ h (t) : J \to \mathbb R^3$, which is a reparametrization of $\alpha$, and:
+$$
+\beta'(t) = h'(t) \alpha'(h(t))
+$$
+This means that the trace and regularity are both unchanged, and same with the tangent line at the corresponding points.
+
+
+
+
 **Frenet-Serret Frame**
 
 The tangent, normal, and binormal vectors to a curve:
@@ -49,13 +88,15 @@ B \\
 $$
 
 
+**Curvature and Torsion**
+
+We can calculate 
+
 **Osculating Plane**
 
 The osculating plane is the plane where a curve is "locally embedded" in 3D space: the tangent and normal vectors span this plane. The binormal vector is orthogonal to this plane.
 
-**Regular**
 
-A curve $r(t$) that is **regular** is a curve that has $r'(t) \ne \mathbf 0$ for all $t$ in its domain. This property can depend on the specific parametrization of the curve, and isn't necessarily an inherent property of the curve.
 
 **Differentials (i.e. $d F_p (v)$)
 
@@ -98,8 +139,34 @@ A function $f: X \to Y$ is a Diffeomorphism if:
 **Arc Length Parametrization**
 - For a curve $\alpha(s)$ parametrized by arc length, we have that $T(s) = \alpha'(s)$. Thus, if we know $T(s)$ we can integrate it to get $\alpha(s)$.
 
+**Parametrizing a curve given implicitly**
+
+Use some trig or hyperbolic identity. Examples:
+- $x^2/a^2 + y^2/b^2 = 1$: Parametrized by $(a \cos t, b \sin t), t\in [0, 2\pi)$.
+- $x^2/a^2 - y^2/b^2 = 1$: Parametrized by $(a \cosh t, b \sinh t), t\in \mathbb R$ (right branch only) or $(a \sec t, b \tan t), t \neq \frac \pi 2$ (both branches).
+- $y^2 = x^2 - x^4$: We can get $y = x \sqrt{1 - x^2}$ for $|x| \le 1$, and a parametrization is $(\sin t, \sin t \cos t)$.
+- $y = f(x)$: We can get $(t, f(t))$.
+
+State the domain and whether the parametrization is injective.
+
+**Spheres**
+
+If a curve $\alpha (t)$ has the property $\langle \alpha(t), \alpha'(t)\rangle = 0$ for all $t$ in the domain, then $|\alpha(t)|$ must be constant. Thus the trace is part of a sphere centered at the origin.
+
+If a curve $\alpha (t)$ has the property $\langle \alpha(t) - a, \alpha'(t)\rangle = 0$ for all $t$ in the domain, then $|\alpha(t) - a|$ is constant, so the trace is part of a sphere centered at $a$.
+
+**Maximal and minimal points of a curve**
+
+If $|\alpha (t_0)|$ is maximal or minimal over the trace, then $\langle \alpha(t_0), \alpha'(t_0) \rangle = 0$.
+
+**Constant angles**
+
+If the angle $\theta$ between $\alpha$ and $\alpha'$ is constant, then we have that:
+$$
+\cos \theta = \frac{\langle \alpha, \alpha'\rangle}{|\alpha| | \alpha'|}
+$$
+is constant.
+
 **Tools**
 - (In the x-y plane) Let $\theta(s)$ be the angle that the tangent of a curve makes with the x-axis. Then we have: $T(s) = \left(\cos (\theta(s)), \sin (\theta(s))\right)$. Thus, $T'(s) = \theta'(s) \left(-\sin (\theta(s)), \cos (\theta(s))\right)$. And by the Frenet-Serret formula we have $\theta'(s) = \kappa(s)$. 
 	- This is useful, because if we know $\kappa(s)$ then we can integrate it to get $\theta(s)$, which gives us an expression for $T(s)$.
--  
-
