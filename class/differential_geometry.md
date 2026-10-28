@@ -42,7 +42,7 @@ This means that the trace and regularity are both unchanged, and same with the t
 
 **Frenet-Serret Frame**
 
-The tangent, normal, and binormal vectors to a curve:
+The tangent, normal, and binormal vectors to a curve (parametrized by arc length):
 $$
 T(s) = \frac{dr}{ds}
 $$
@@ -90,7 +90,13 @@ $$
 
 **Curvature and Torsion**
 
-We can calculate 
+We can calculate the curvature of a curve at any given point (if the curve is parametrized by arc length) with:
+
+$$
+k = |\alpha''(s)|
+$$
+
+We can calculate the torsion with its definition in the Frenet-Serret formulas.
 
 **Osculating Plane**
 
