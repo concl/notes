@@ -60,10 +60,10 @@ $$
 $$
 
 $$
-\frac{dN}{ds} = -\kappa T +\tau B
+\frac{dN}{ds} = -\kappa T -\tau B
 $$
 $$
-\frac{dB}{ds} = -\tau N
+\frac{dB}{ds} = \tau N
 $$
 ($\kappa$ = curvature of the curve, $\tau$ is torsion)
 
@@ -77,8 +77,8 @@ $$
 =
 \begin{bmatrix}
 0 & \kappa & 0 \\
--\kappa & 0 & \tau \\
-0 & -\tau & 0
+-\kappa & 0 & -\tau \\
+0 & \tau & 0
 \end{bmatrix}
 \begin{bmatrix}
 T \\
@@ -135,7 +135,17 @@ A function $f: X \to Y$ is a Diffeomorphism if:
 2. Smooth: It is infinitely differentiable everywhere
 3. Smooth Inverse
 
+**Regular Surface**
 
+A subset $S \subset R^3$ is a regular surface if every $p \in S$ has a relatively open neighborhood $V \subset S$ and a map $x : U \to V, U \subset R^2$ open such that 
+
+1. $x$ is smooth
+2. $x$ is a homeomorphism onto $V$
+3. $dx_p$ has rank 2 for every $p \in U$
+
+$x$ is then called a coordinate patch.
+
+We can make sure that $dx_p$ is rank 2 by ensuring that the columns are linearly independent.
 
 ## Notes
 
@@ -176,3 +186,12 @@ is constant.
 **Tools**
 - (In the x-y plane) Let $\theta(s)$ be the angle that the tangent of a curve makes with the x-axis. Then we have: $T(s) = \left(\cos (\theta(s)), \sin (\theta(s))\right)$. Thus, $T'(s) = \theta'(s) \left(-\sin (\theta(s)), \cos (\theta(s))\right)$. And by the Frenet-Serret formula we have $\theta'(s) = \kappa(s)$. 
 	- This is useful, because if we know $\kappa(s)$ then we can integrate it to get $\theta(s)$, which gives us an expression for $T(s)$.
+
+
+**Inverse Function Theorem**
+
+If $F: U \subset R^n \to R^n$ is smooth and $\det J_F (p) \neq 0$, then for some open neighborhoods of $p$ and $F(p)$ they are related by a diffeomorphic restriction on $F$.
+
+If $F$ is bijective and $\det J_F (p) \neq 0$ for all $p \in U$, then $F$ is a diffeomorphism.
+
+
