@@ -70,6 +70,12 @@ https://docs.vllm.ai/en/latest/contributing/profiling/
 
 Visualizing traces: https://ui.perfetto.dev/
 
+### Intra-Kernel Profiling
+
+https://github.com/triton-lang/triton/blob/main/third_party/proton/docs/intra-kernel.md
+
+
+
 ## Serving models
 
 ```bash
