@@ -20,4 +20,17 @@ A file that describes how the result should be represented (usually HTML). Templ
 **URLs**
 When a user requests a URL, Django decides with view it will send the request to. This logic is handled in `urls.py`.
 
+**App**
+A component of the project.
+
+## Starting
+
+Install django in a python installation, then run `django-admin startproject foo` to create a project.
+
+Inside the project, run `python manage.py startapp bar` to create a new app in the project.
+
+To start the server, run:
+```bash
+python manage.py runserver
+```
 

@@ -2,28 +2,31 @@
 ## Definitions
 
 ### General
-- **GEMM (General Matrix Multiply)**
-  Part of BLAS. Kernel for general matrix multiplication. Used in linear layers.
+**GEMM (General Matrix Multiply)**
+Part of BLAS. Kernel for general matrix multiplication. Used in linear layers.
 
-- **W8A16 (Weight 8 Activations 16)**
-  In general, quantization schemes can be described succintly as WXAY, which is read as "X bit weights, Y bit activations", meaning the weights are stored in memory with X bit datatypes, and inputs/outputs and computation is done in Y bits.
+**W8A16 (Weight 8 Activations 16)**
+In general, quantization schemes can be described succintly as WXAY, which is read as "X bit weights, Y bit activations", meaning the weights are stored in memory with X bit datatypes, and inputs/outputs and computation is done in Y bits.
 
-- **Prefill**
-  The phase of model inference when inputs go through the forward pass.
+**Prefill**
+The phase of model inference when inputs go through the forward pass.
+
+**Continuous Batching**
+
+
 
 ### Benchmarking Metrics
 
 End-to-end benchmarking metrics that measure performance of a setup. Usually given as a mean.
 
-- **TTFT (Time to first token)**
-  Time to first token (thinking or content both count). Measures the latency from the prefill phase.
+**TTFT (Time to first token)**
+Time to first token (thinking or content both count). Measures the latency from the prefill phase.
 
-- **TPOT (Time per output token)**
-  Measures the average (single-stream) time between tokens during the decode phase (not including the first token). 
-  
-- **tok/s (Token throughput in tokens per second)**
-  Measures the average (concurrent) tokens generated per second during the decode phase. Calculated as the total number of tokens generated across every stream divided by the time taken for the entire request (including prefill, scheduling, and tail time).
+**TPOT (Time per output token)**
+Measures the average (single-stream) time between tokens during the decode phase (not including the first token). 
 
+**tok/s (Token throughput in tokens per second)**
+Measures the average (concurrent) tokens generated per second during the decode phase. Calculated as the total number of tokens generated across every stream divided by the time taken for the entire request (including prefill, scheduling, and tail time).
 
 ## Benchmarking
 
@@ -93,7 +96,7 @@ vllm serve --config config.yaml
 
 ### Entrypoints
 
-Source: https://docs.vllm.ai/en/latest/design/arch_overview/
+Source (Outdated): https://docs.vllm.ai/en/latest/design/arch_overview/
 
 vLLM has different entrypoints (frontends) for the user to interact with the main system/engine. From the vllm python library, the main interface is the [LLM](https://github.com/vllm-project/vllm/blob/main/vllm/entrypoints/llm.py) class, whose "backend" is the `EngineCore` class.
 
