@@ -1,10 +1,22 @@
 Tool for containerizing anything that is run from the command line.
 
+## Definitions
+
+The main objects that Docker works with are **containers** and **images**
+
+**Containers**
+A standardized environment for code to be executed. This is fully described in an image.
+
+**Images**
+Recipe for containers, including technologies, runtimes, and system tools needed for the container. An image can spawn multiple containers at the same time.
+
+
 ## What does Docker do/ensure?
 
 When programs are run from different machines, sometimes they work and sometimes they don't due to differences in the environment.
 
 Docker solves this by **containerization**, where the program is isolated and provided with its own dependencies, runtime, and filesystem. The environment that Docker builds with the mentioned components is called a **container**.
+
 
 ### Containers
 
@@ -21,6 +33,7 @@ Containers include the following things that ensure that running a program is co
 Containers do **not** handle the following:
 - OS kernel (On windows, the linux kernel is included with WSL)
 - Physical Hardware (obviously): Docker containers only request a fraction of resources
+
 
 ## Creating a Docker Container
 
