@@ -1,6 +1,10 @@
 [[python]]
 Main Docs: https://triton-lang.org/main/index.html
 
+## Definitions
+
+**Stride**
+How far to move along in memory to advance by 1 step in one dimension of a tensor. This is useful because tensors are stored contiguously in 1 block of memory.
 
 ## Introduction
 
@@ -59,4 +63,15 @@ demo[(1, 1, 1)](torch.ones(4, 3))
 ```
 
 
-`tl.store(ptr + arange, value_to_store, mask)`:  Writes 
+`tl.store(ptr + arange, value_to_store, mask)`:  Writes the values in `value_to_store` to the ptr, without touching elements that are masked.
+
+`tl.arange(start, end)`: creates a range of indices in `[start, end)`. The start and end must be compile time constants. We can create shifted versions of these indices with:
+```python
+shift = tl.arange(start, end)
+idx = shift + start
+```
+
+## Examples
+
+### Matrix multiplication
+
