@@ -180,6 +180,7 @@ One notable fact about pointwise convergence is that it does not preserve limits
 
 
 **Uniform convergence**
+A sequence of functions $(f^{(n)})_{n=1}^{\infty}$ converges uniformly to $f: X \to Y$ if for any $\varepsilon > 0$ there exists $N \ge 1$ such that any $n > N$ satisfies $d_Y(f^{(n)}(x), f(x))) < \varepsilon$ for any $x \in X$.
 
 
 
