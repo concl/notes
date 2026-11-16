@@ -185,6 +185,54 @@ A sequence of functions $(f^{(n)})_{n=1}^{\infty}$ converges uniformly to $f: X 
 A notable property of uniform limits are that they preserve continuity
 
 
+**Bounded Function**
+A function $f: X \to Y$ is bounded if its image $f(X)$ is a bounded set, i.e. there exists a ball $B(y_0, R)$ which supersets it.
+
+
+**Metric space of bounded functions**
+The notion of the convergence of a sequence of functions $f: X \to Y$ can be viewed as a special case of the converge of a sequence in a metric space. We can define a metric space where the elements are bounded functions, and the norm is:
+$$
+d_{\infty}(f, g) = \sup_{x \in X} d_Y(f(x), g(x)) 
+$$
+This norm is known as the sup norm metric or $L_\infty$.
+
+We can let $B(X \to Y)$ denote the metric space of bounded functions from $X$ to $Y$. $d_{B(X \to Y)}$ is a synonym for $d_\infty$.
+
+Since $f$ and $g$ are bounded, the distance between any 2 functions is finite.
+
+We can observe that the convergence of a sequence in this metric space is the same as uniform convergence.
+
+
+**Infinite Series**
+Let $(X, d_X)$ be a metric space. Let $(f^{(n)})_{n=1}^\infty$ be an infinite sequence of real valued functions. We can define the infinite sum of these functions by considering the sequence of partial sums. These partial sums can either converge pointwise or uniformly to some other real valued function $f$.
+
+
+**Sup norm**
+The sup norm of a bounded real valued function is:
+$$
+||f||_\infty = \sup_{x \in X} |f(x)|
+$$
+
+
+**Formal Power Series**
+A power series centered at $a$ is a series of the form:
+$$
+\sum_{n=0}^\infty c_n(x - a)^n
+$$
+where $c_n$ is a sequence of real numbers (that do not depend on $x$).
+
+
+**Radius of Convergence**
+The radius of convergence of a formal power series can be defined as:
+$$
+R = \frac{1}{\limsup_{n \to \infty} |c_n|^{1/n}}
+$$
+where we adopt the convention that $\frac10 = +\infty$ and $\frac1{+\infty} = 0$.
+
+
+
+
+
 
 ## Theorems and Properties
 
@@ -221,4 +269,75 @@ For metric spaces, this definition is equivalent to the sequence definition of c
 
 **Maximum Principle**
 A continuous function $f : X \to \mathbb R$, where $(X, d)$ is a compact metric space, is bounded (the image is a bounded subset of $\mathbb R$). Furthermore, $f$ attains it maximum value at some point $x_\max \in X$ and its minimum value at some point $x_\min \in X$.
+
+
+**Interchange of Limits and Uniform Limits**
+If $(f^{(n)})_{n=1}^\infty$ converges uniformly to $f: X \to Y$, and $Y$ is a complete metric space, then:
+$$
+\lim_{n \to \infty} \lim_{x \to x_0} f^{(n)}(x) = \lim_{x \to x_0} \lim_{n \to \infty} f^{(n)}(x) = \lim_{x \to x_0} f(x)
+$$
+
+
+**Uniform Limits Preserve Boundedness**
+If $(f^{(n)})_{n=1}^\infty$ converges uniformly to $f: X \to Y$, and each of $f^{(n)}$ is bounded, then $f$ is bounded.
+
+
+**The space of continuous functions is complete**
+The subspace of continuous functions $C(X \to Y)$ is a complete subspace of $B(X \to Y)$. This means that any Cauchy sequence of continuous functions has a limit in $C(X \to Y)$.
+
+
+**Weierstrass M-test**
+Let $(f^{(n)})_{n=1}^\infty$ be a sequence of functions such that the infinite series of sup norms converges:
+$$
+\sum_{n=1}^\infty ||f^{(n)}||_\infty = L
+$$
+Then $(f^{(n)})_{n=1}^\infty$ converges uniformly to some $f$ on $X$, which is continuous.
+
+
+**Uniform limits can be interchanged with Riemann Integration**
+If $(f^{(n)})_{n=1}^\infty$, a sequence of Riemann integrable real valued functions on an interval, converges uniformly to $f: [a, b] \to \mathbb R$ then:
+$$
+\lim_{n \to \infty}\int_{[a, b]} f^{(n)} = \int_{[a,b]} f
+$$
+Proof:
+To show the interval converges, we show that the upper and lower Riemann integrals of $f$ match:
+$$
+\underline\int_{[a,b]} f = \overline\int_{[a,b]} f
+$$
+Take any arbitrary $\varepsilon > 0$. Since the sequence of functions converges uniformly, we can find some $N > 0$ such that $n > N$ implies that $|f^{(n)}(x) - f(x)| < \varepsilon$ for any $x \in [a, b]$. This means that:
+$$
+f^{(n)}(x) - \varepsilon< f(x) < f^{(n)}(x) + \varepsilon
+$$
+We can then integrate both sides to obtain:
+$$
+\int_{[a, b]}f^{(n)} - (b - a)\varepsilon \le \underline\int_{[a, b]}f \le \overline\int_{[a, b]} f \le \int_{[a, b]}f^{(n)} + (b - a)\varepsilon
+$$
+Thus we have (after rearranging):
+$$
+0 \le \overline\int_{[a, b]} f - \underline\int_{[a, b]}f \le 2(b - a) \varepsilon
+$$
+Since this is true for any $\varepsilon > 0$, we must have that
+$$
+\overline\int_{[a, b]} f = \underline\int_{[a, b]}f
+$$
+and thus the Riemann integral converges.
+
+Furthermore, we can also see that for any $\varepsilon > 0$ there exists $N > 0$ such that $n > N$ implies
+$$
+|\int_{[a, b]} f^{(n)} - \int_{[a, b]} f| < 2(b - a) \varepsilon
+$$
+Thus the limit of the integrals is the integral of the limit.
+
+Rephrasing the theorem, we have that:
+$$
+\lim_{n \to \infty} \int_{[a, b]} f^{(n)} = \int_{[a, b]} \lim_{n \to \infty} f^{(n)}
+$$
+provided the convergence is uniform.
+
+
+**Uniformly convergent derivatives**
+If $f_n'$ is a sequence of continuous derivatives of functions $f_n$ which uniformly converges to some function $g$, and $f_n(x_0)$ converges for some $x_0$, then the sequence of functions $f_n$ converges uniformly to some function $f$, and $f' = g$.
+
+
+
 
