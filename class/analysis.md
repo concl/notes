@@ -182,7 +182,17 @@ One notable fact about pointwise convergence is that it does not preserve limits
 **Uniform convergence**
 A sequence of functions $(f^{(n)})_{n=1}^{\infty}$ converges uniformly to $f: X \to Y$ if for any $\varepsilon > 0$ there exists $N \ge 1$ such that any $n > N$ satisfies $d_Y(f^{(n)}(x), f(x))) < \varepsilon$ for any $x \in X$.
 
-A notable property of uniform limits are that they preserve continuity
+A notable property of uniform limits are that they preserve continuity.
+
+Proof:
+
+Suppose $(f^{(n)})_{n=1}^\infty$ is a sequence of continuous functions that uniformly converges to $f: X \to Y$. Assume FSOC that $f$ is discontinuous, meaning that there exists $x \in X$ and some $\varepsilon > 0$ where for all $\delta > 0$ there exists $x' \in X$ where $d_X(x, x') < \delta$ and $d_Y(f(x), f(x')) \ge \varepsilon$. 
+
+Since $(f^{(n)})_{n=1}^\infty$ is uniformly convergent, we can find $N > 0$ where $n > N$ implies that $d_Y(f^{(n)}(x), f(x)) < \varepsilon / 3$ for all $x \in X$. Since each $f^{(n)}$ is continuous, there exists $\delta > 0$ where any $x'' \in X$ where $d_X(x'', x) < \delta$ has $d_Y(f^{(n)}(x''), f^{(n)}(x)) < \varepsilon / 3$. 
+
+We then have by triangle inequality that $d_Y(f(x), f(x')) < d_Y(f(x), f^{(n)}(x)) + d_Y(f^{(n)}(x), f^{(n)}(x')) +d_Y(f^{(n)}(x'), f(x')) < \varepsilon / 3 + \varepsilon / 3 + \varepsilon / 3 = \varepsilon$ which is a contradiction. 
+
+
 
 
 
