@@ -75,6 +75,10 @@ We denote an isomorphism with $G \cong G'$
 **Jordan Curve**
 A closed curve without intersections. We can define this as a mapping $f$ from $[0, 1]$ to the plane where it is injective except for $f(0) = f(1)$.
 
+
+**Combinatorial Characterization of Planar Graph**
+A graph is planar iff every subdivision of the graph is planar.
+
 ## Theorems
 
 **Handshake Lemma**
@@ -119,7 +123,12 @@ Consider the case where $b_4$ lies on the interior of the curve, and thus $b_5$ 
 
 A similar argument shows that it is also impossible for both $b_4$ and $b_5$ to be on the exterior of the original curve, and thus $K_5$ is not planar.
 
+
 **Cycles in planar 2 connected graphs**
-If $G$ is a 2-connected planar graph, then every face in any planar drawing of $G$ is a region of some cycle in $G$. (For brevity, we call the Jordan curve formed by taking the edges in a cycle in a planar drawing of a 2-connected graph a cycle too).
+If $G$ is a 2-connected planar graph, then every face in any planar drawing of $G$ is a region (interior or exterior) of some cycle in $G$. (For brevity, we call the Jordan curve formed by taking the edges in a cycle in a planar drawing of a 2-connected graph a cycle too).
+
+
+**Kuratowski Theorem**
+A graph $G$ is planar iff it has no subgraph isomorphic to a subdivision of $K_{3, 3}$ or to a subdivision of $K_5$.
 
 
