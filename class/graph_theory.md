@@ -132,3 +132,7 @@ If $G$ is a 2-connected planar graph, then every face in any planar drawing of $
 A graph $G$ is planar iff it has no subgraph isomorphic to a subdivision of $K_{3, 3}$ or to a subdivision of $K_5$.
 
 
+**Euler's Formula**
+
+
+
