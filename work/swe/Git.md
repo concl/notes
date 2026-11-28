@@ -1,5 +1,33 @@
 cheat sheet is here: https://git-scm.com/cheat-sheet
 
+## Definitions
+
+`HEAD`
+
+
+
+## Useful commands
+
+
+### Removing files
+
+- `git rm --cached file` removes a file from being tracked from the git (if you accidentally pushed it before changing gitignore)
+- `git rm --cached -r dir/` recursively removes the entire directory
+
+### Branching
+
+- `git branch`: list branches
+- `git branch -D branch1 branch2 ...`: deletes unused branches
+- `git branch --sort=-committerdate`: List branches sorted by most recently committed to
+- `git checkout branch`: Change to a branch
+- `git checkout -b branch`: Create a branch
+
+### Diffing
+
+- `git diff HEAD`: Diff all staged and unstaged changes
+- `git diff <commit> <file>`: Diff a single file since a commit
+ 
+
 
 ## Common Scenarios
 
@@ -34,10 +62,3 @@ If the commit was the last commit, simply remove the information (or you can eve
 git add .
 git commit --amend
 ```
-
-
-## Useful commands
-
-- `git rm --cached file` removes a file from being tracked from the git (if you accidentally pushed it before changing gitignore)
-- `git rm --cached -r dir/` recursively removes the entire directory
-- `git branch -D branch1 branch2 ...` deletes unused branches

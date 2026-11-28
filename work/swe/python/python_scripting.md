@@ -1,4 +1,4 @@
-[[web_scraping]], [[Regex]]
+[[web_scraping]], [[regex]]
 
 
 ## subprocess

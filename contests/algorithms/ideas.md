@@ -30,8 +30,21 @@ Sometimes the problem can be broken down into cases. Generally, considering one 
 
 ## invariants
 
-Sometimes, when performing operations on an object, a certain property cannot change. This is useful for proving that certain things are impossible and thus do not need to be considered.
+Sometimes, when performing operations on an object, a certain property cannot change. This is useful for proving that certain things are impossible and thus do not need to be considered. This is also a strategy to find arguments for greedy algorithms.
 
+Example:
+Problem: https://open.kattis.com/contests/wiu64b/problems/incrementalinduction
+In this problem, the key observation is that once the first contestant is chosen, every time another contestant is added, the current $k$ is updated only depending on the number of games that this contestant has won. 
+
+We can think of this in terms of invariants by first considering the number of games that have been lost by each contestant in our stage set, $S$ (which starts empty, and accumulates players according to the order in which contestants are added). Denote this as $L(S) = \sum L(S_i)$ where $L(S_i)$ is the number of games that the $i$th contestant lost. 
+
+The number of "bad games" is thus this quantity minus the number of losses that are between contestants in $S$. Since each game always end in a win or loss, the number of losses between contestants in $S$ is always $\binom{|S|}{2}$.
+
+Thus we have a formula for the number of bad games at any point in time (where $t$ represents the number of contestants that we have added so far, $|S| = t$):
+$$
+\text{badgames}(t) = \sum L(S_i) - \binom{t}{2}
+$$
+This gives us an easy recurrence relation that allows us to compute the number of bad games at every point in time quickly. Furthermore, the optimal order is one where contestants that have less losses than other contestants go first.
 ## symmetry
 
 Symmetry can be often used to optimize resource complexity.
